@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2PSend", "P2PSend\P2PSend.csproj", "{6AC5EBAC-8A13-4EBF-A30A-EA7649426CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2PReceive", "P2PReceive\P2PReceive.csproj", "{4DB3AE6D-1F41-43B6-A90F-4E08698473B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AC5EBAC-8A13-4EBF-A30A-EA7649426CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC5EBAC-8A13-4EBF-A30A-EA7649426CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC5EBAC-8A13-4EBF-A30A-EA7649426CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC5EBAC-8A13-4EBF-A30A-EA7649426CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB3AE6D-1F41-43B6-A90F-4E08698473B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB3AE6D-1F41-43B6-A90F-4E08698473B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB3AE6D-1F41-43B6-A90F-4E08698473B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB3AE6D-1F41-43B6-A90F-4E08698473B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {077BCCAE-9E6B-41C0-9E84-622C0E4D1874}
+	EndGlobalSection
+EndGlobal
