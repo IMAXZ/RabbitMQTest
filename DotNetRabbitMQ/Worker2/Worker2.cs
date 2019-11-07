@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading;
 using Utils;
 
-namespace Worker
+namespace Worker2
 {
-    class Worker
+    class Worker2
     {
         static void Main(string[] args)
         {
@@ -34,9 +34,9 @@ namespace Worker
                     Console.WriteLine(" [x] Done");
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 };
-                channel.BasicConsume(queue:"task_queue",
-                    autoAck:false,
-                    consumer:consumer
+                channel.BasicConsume(queue: "task_queue",
+                    autoAck: false,
+                    consumer: consumer
                     );
                 Console.WriteLine(" Press [enter] to exit.");
                 Console.ReadLine();

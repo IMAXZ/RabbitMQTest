@@ -2,6 +2,7 @@
 using RabbitMQ.Client.Events;
 using System;
 using System.Text;
+using Utils;
 
 namespace P2PReceive
 {
@@ -9,17 +10,8 @@ namespace P2PReceive
     {
         static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() 
-            {
-                HostName = "49.232.164.202",
-                UserName = "admin",
-                Password = "admin",
-                Port = AmqpTcpEndpoint.UseDefaultPort,
-                VirtualHost = "/",
-                Protocol = Protocols.DefaultProtocol
-            };
+            var factory = ConnectionFactoryUtils.GetConnectionFactory();
             using (var connection = factory.CreateConnection())
-
             using (var channel = connection.CreateModel())
             {
                 channel.QueueDeclare(queue: "hello",
@@ -40,7 +32,7 @@ namespace P2PReceive
                                                     consumer: consumer);
                 Console.WriteLine("Press [Enter] to exit.");
                 Console.ReadLine();
-            }   
+            }
         }
     }
 }
