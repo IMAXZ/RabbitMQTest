@@ -19,16 +19,24 @@ namespace NewTask
                     autoDelete: false,
                     arguments: null
                     );
-                var message = GetMessage(args);
-                var body = Encoding.UTF8.GetBytes(message);
+                //消息设置持久性，即便RabbitMQ重新启动，队列中的消息也不会丢失
                 var properties = channel.CreateBasicProperties();
                 properties.Persistent = true;
-                channel.BasicPublish(exchange: "",
-                    routingKey: "task_queue",
-                    basicProperties: properties,
-                    body: body
-                    );
-                Console.WriteLine(" [x] Sent {0}", message);
+                
+                for (int i = 1; i <= 20; i++)
+                {
+                    var message = GetMessage(args);
+                    message += "===>" + i;
+                    var body = Encoding.UTF8.GetBytes(message);
+
+                    channel.BasicPublish(exchange: "",
+                        routingKey: "task_queue",
+                        basicProperties: properties,
+                        body: body
+                        );
+                    Console.WriteLine(" [x] Sent {0}", message);
+                }
+                
             }
             Console.WriteLine(" Press [enter] to exit.");
             Console.ReadLine();

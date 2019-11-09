@@ -21,7 +21,8 @@ namespace Worker
                     autoDelete: false,
                     arguments: null
                     );
-                channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+                //解开注释则与下方手动确认ack联合可以根据消息处理能力分发给其他消费者
+                //channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
                 Console.WriteLine(" [*] Waiting for message.");
                 var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += (model, ea) =>
@@ -29,8 +30,7 @@ namespace Worker
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine(" [x] Received {0}", message);
-                    int dots = message.Split('.').Length - 1;
-                    Thread.Sleep(dots * 1000);
+                    Thread.Sleep(2 * 1000);
                     Console.WriteLine(" [x] Done");
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 };
